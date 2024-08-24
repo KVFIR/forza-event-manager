@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключаем стили, если они есть -->
+    <title>Профиль пользователя</title>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-header">
-            <h1>Welcome, <span id="username">User</span>!</h1>
-        </div>
-        <div class="profile-info">
-            <img id="avatar" src="default-avatar.png" alt="User Avatar" class="avatar">
-            <div class="details">
-                <p><strong>Discord ID:</strong> <span id="discord-id">123456789</span></p>
-                <p><strong>Status:</strong> <span id="status">Online</span></p>
-                <p><strong>Joined:</strong> <span id="joined-date">2024-08-23</span></p>
-            </div>
-        </div>
-        <div class="profile-actions">
-            <button onclick="logout()">Logout</button>
-        </div>
-    </div>
+    <h1>Welcome, <span id="username"></span>!</h1>
+    <img id="avatar" src="" alt="User Avatar" width="100">
 
-    <script src="profile.js"></script>
+    <h2>Информация о гильдиях:</h2>
+    <div id="guilds"></div>
+
+    <h2>Подключения пользователя:</h2>
+    <div id="connections"></div>
+
+    <button onclick="logout()">Logout</button>
+
+    <script src="js/profile.js"></script>
 </body>
 </html>
