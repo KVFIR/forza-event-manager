@@ -8,21 +8,22 @@ if (token) {
 
     // Отображение основной информации о пользователе
     document.getElementById('username').innerText = userData.userInfo.username;
+    document.getElementById('email').innerText = userData.userInfo.email;
     document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${userData.userInfo.id}/${userData.userInfo.avatar}.png`;
 
     // Отображение информации о гильдиях пользователя
-    const guildsContainer = document.getElementById('guilds');
+    const guildsContainer = document.getElementById('guild-list');
     userData.userGuilds.forEach(guild => {
-        const guildElement = document.createElement('div');
-        guildElement.innerText = `Гильдия: ${guild.name} (ID: ${guild.id})`;
+        const guildElement = document.createElement('li');
+        guildElement.innerText = guild.name;
         guildsContainer.appendChild(guildElement);
     });
 
     // Отображение информации о подключениях пользователя
-    const connectionsContainer = document.getElementById('connections');
+    const connectionsContainer = document.getElementById('connections-list');
     userData.userConnections.forEach(connection => {
-        const connectionElement = document.createElement('div');
-        connectionElement.innerText = `Подключение: ${connection.type} (имя: ${connection.name})`;
+        const connectionElement = document.createElement('li');
+        connectionElement.innerText = `${connection.type}: ${connection.name}`;
         connectionsContainer.appendChild(connectionElement);
     });
 } else {

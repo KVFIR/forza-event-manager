@@ -7,18 +7,22 @@
 </head>
 <body>
     <div class="user-info">
-        <h2>Добро пожаловать, {{ userInfo.username }}!</h2>
-        <img src="https://cdn.discordapp.com/avatars/{{ userInfo.id }}/{{ userInfo.avatar }}.png" alt="User Avatar">
-        <p>Email: {{ userInfo.email }}</p>
-    </div>
-    <div class="user-guilds">
-        <h3>Ваши серверы:</h3>
-        <ul>
-            {% for guild in userGuilds %}
-                <li>{{ guild.name }}</li>
-            {% endfor %}
-        </ul>
+        <h2>Добро пожаловать, <span id="username"></span>!</h2>
+        <img id="avatar" src="" alt="User Avatar">
+        <p>Email: <span id="email"></span></p>
     </div>
     
+    <div class="user-guilds">
+        <h3>Ваши серверы:</h3>
+        <ul id="guild-list"></ul>
+    </div>
+
+    <div class="user-connections">
+        <h3>Ваши подключения:</h3>
+        <ul id="connections-list"></ul>
+    </div>
+
+    <!-- Подключение скрипта -->
+    <script src="js/profile.js"></script>
 </body>
 </html>
